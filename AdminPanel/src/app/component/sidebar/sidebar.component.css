@@ -1,0 +1,74 @@
+/* sidebar */
+#vendor_dashboard .sidebar {
+    width: 250px;
+    /* background-color: #072146e5; */
+}
+
+.sidebar_links {
+    color: #8b9db8;
+    margin: 1.5em 0;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    cursor: pointer;
+}
+
+.sub-menu .sidebar_links {
+    justify-content: space-between;
+}
+
+.sub-menu .right {
+    transform: rotate(-180deg);
+}
+
+.sub-menu .right.active {
+    transform: rotate(0) !important;
+}
+
+.sidebar_links svg {
+    color: #1f4173;
+    font-size: 1.6em;
+    margin-right: 0.5em;
+}
+
+.sidebar_links.active {
+    border-left: 4px solid #1f9c95;
+    color: #1f9c95;
+    font-weight: bold;
+}
+
+.sidebar_links.active svg {
+    color: #1f9c95;
+}
+
+.sidebar ul li a {
+    color: #1f4173;
+    text-decoration: none;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    transition: 0.2s linear;
+}
+
+.sidebar ul li ul li a {
+    justify-content: left !important;
+    margin: 0.8em 0 0.8em 3em !important;
+    /* margin-left: 3em !important; */
+}
+
+li ul.active {
+    display: none;
+}
+
+
+
+
+/* sidebar */
+@media (max-width: 1448px) {
+    .sidebar {
+        width: 230px !important;
+    }
+}

@@ -1,0 +1,167 @@
+<div class="flex justify_between align_center">
+    <h2>Driver List</h2>
+    <div class="flex gap_1">
+        <button class="btn" (click)="addDriver()">Add Driver</button>
+    </div>
+</div>
+
+
+
+<div class="vendor_table" id="vendor_table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Phone number</th>
+                <th>Email</th>
+                <th>Licence</th>
+                <th>Car</th>
+                <th>Car image</th>
+                <th>Plate number</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of driverData | paginate:{itemsPerPage:4, currentPage:page} ">
+                <td>{{data.name}}</td>
+
+
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+                        <a href="{{data.image}}" target="_blank">
+                            <img *ngIf="data.image !=='' " src="{{data.image}}" alt="">
+                        </a>
+                        <p *ngIf="data.image =='' ">(No image)</p>
+                    </div>
+                </td>
+
+                <td>{{data.mobileNumber}}</td>
+                <td>{{data.email}}</td>
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+                        <a href="{{data.vehicleRegistration}}" target="_blank">
+                            <img *ngIf="data.vehicleRegistration !=='' " src="{{data.vehicleRegistration}}" alt="">
+                        </a>
+                        <p *ngIf="data.vehicleRegistration =='' ">(No image)</p>
+                    </div>
+                </td>
+                <td>{{data.vehicle['name']}}</td>
+
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+                        <a href="{{data.vehicle['image']}}" target="_blank">
+                            <img *ngIf="data.vehicle['image'] !=='' " src="{{data.vehicle['image']}}" alt="">
+                        </a>
+                        <p *ngIf="data.vehicle['image'] =='' ">(No image)</p>
+                    </div>
+                </td>
+                <td>{{data.email}}</td>
+
+                <td style="width: 200px;">
+                    <div class="flex justify_center align_center actions gap_1">
+
+                        <a class="flex justify_center align_center btn" (click)="editModelOpen(data)">
+                            <span class="iconify" data-icon="ic:baseline-edit"></span> Edit
+                        </a>
+                        <a class="flex justify_center align_center btn" (click)="deleteUser(data)"
+                            style="background-color: red; color: white; border: none;">
+                            <span class="iconify" data-icon="material-symbols:delete-outline-sharp"></span> Delete
+                        </a>
+                    </div>
+                </td>
+            </tr>
+
+
+        </tbody>
+
+
+    </table>
+</div>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Prev"></pagination-controls>
+
+
+
+
+<div class="modal " id="show_vendor_bidded_modal" [class.is-visible]="modalOpen">
+    <div class="modal-overlay"></div>
+    <div class="modal-wrapper">
+        <div class="modal_contents">
+            <div class="modal_header flex justify_between ">
+
+                <h1>Edit user</h1>
+                <div class="modal_btn">
+
+                    <button class="modal-close" (click)="ModalClose()">
+                        <span class="iconify" data-icon="ic:round-close"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="modal_body flex">
+                <div class="modal_body flex flex_col">
+                    <div class="vendor_section">
+                        <div class="vendor_form_section">
+                            <form class="profile_form" method="" action="">
+                                <div class="input_row">
+                                    <div class="input_box flex flex_col">
+                                        <label for="">Name</label>
+                                        <input type="text" id="" name="name" placeholder="Eg. your text here"
+                                            [(ngModel)]="selectedUser.name">
+                                    </div>
+                                </div>
+
+
+                                <div class="input_row flex justify_between">
+
+                                    <div class="input_box flex flex_col input_sm">
+                                        <label for="">Phone Number</label>
+                                        <input name="mobileNumber" type="tel" id="" placeholder="Eg. your text here"
+                                            [(ngModel)]="selectedUser.mobileNumber">
+                                    </div>
+
+
+                                    <div class="input_box flex flex_col input_sm">
+                                        <label for="">Email Address</label>
+                                        <input name="email" type="email" id="" placeholder="Eg. your text here"
+                                            [(ngModel)]="selectedUser.email">
+                                    </div>
+
+                                </div>
+
+                                <div class="input_row " id="file_up">
+                                    <div class="input_box flex flex_col ">
+                                        <label for="">Profile Picture:</label>
+                                        <input name="file" type="file" id="" #file placeholder="Eg. your text here"
+                                            (change)="onFileUp($event)">
+                                    </div>
+                                </div>
+                                <div class="input_row flex justify_between">
+
+                                    <div class="input_box flex flex_col">
+                                        <label for="">Address"</label>
+                                        <textarea name="address" type="text" id="" placeholder="Eg. your text here"
+                                            rows="4" [(ngModel)]="selectedUser.address"></textarea>
+                                    </div>
+
+
+                                </div>
+
+
+                                <!-- <div class="alert_message" *ngIf="message">{{message}}</div> -->
+
+                                <div class="input_row flex justify_flex_end btn_personal_info">
+                                    <!-- <button (click)="backto_userlist();" class="btn" type="submit">Cancel</button> -->
+                                    <button class="btn mt-1" type="submit" (click)="updateUser()">Update user</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

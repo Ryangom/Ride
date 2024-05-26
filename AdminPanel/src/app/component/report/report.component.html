@@ -1,0 +1,98 @@
+<div class="" id="vendor_main_content">
+    <h2>RIDE application Info</h2>
+
+    <div class="flex justify_between admin_top">
+        <div class="admin_info">
+            <div class="flex justify_center align_center" style="flex-wrap: wrap; gap: 1em;">
+                <!-- Total User -->
+                <div class="vendor_card">
+                    <div class="vendor_card_top flex align_center justify_between ">
+
+                        <div class="flex flex_col">
+                            <h3>Total User</h3>
+                        </div>
+                        <p (click)="downloadReport('user')">
+                            <span class="iconify" data-icon="material-symbols:cloud-download-outline-rounded"></span>
+                        </p>
+
+
+
+                    </div>
+                    <div class="vendor_card_main flex justify_center align_center">
+                        <h1>{{applicationInfo.userCount}}</h1>
+                    </div>
+                </div>
+                <!-- Total Deliveries -->
+                <div class="vendor_card">
+                    <div class="vendor_card_top flex align_center justify_between ">
+
+                        <div class="flex flex_col">
+                            <h3>Total Drivers</h3>
+                        </div>
+                        <p (click)="downloadReport('driver')">
+                            <span class="iconify" data-icon="material-symbols:cloud-download-outline-rounded"></span>
+                        </p>
+
+                    </div>
+                    <div class="vendor_card_main flex justify_center align_center">
+                        <h1>{{applicationInfo.driverCount}}</h1>
+                    </div>
+                </div>
+                <!-- Total Orders -->
+                <div class="vendor_card">
+                    <div class="vendor_card_top flex align_center justify_between ">
+
+                        <div class="flex flex_col">
+                            <h3>Total Orders</h3>
+                        </div>
+                        <p (click)="downloadReport('order')">
+                            <span class="iconify" data-icon="material-symbols:cloud-download-outline-rounded"></span>
+                        </p>
+
+                    </div>
+                    <div class="vendor_card_main flex justify_center align_center">
+                        <h1>{{applicationInfo.pickupRequestCount}}</h1>
+                    </div>
+                </div>
+                <!-- Total Vendor -->
+                <div class="vendor_card">
+                    <div class="vendor_card_top flex align_center justify_between ">
+
+                        <div class="flex flex_col">
+                            <h3>Total Vendor</h3>
+                        </div>
+                        <!-- <span class="iconify" data-icon="material-symbols:cloud-download-outline-rounded"></span> -->
+
+                    </div>
+                    <div class="vendor_card_main flex justify_center align_center">
+                        <h1>{{100}}</h1>
+                    </div>
+                </div>
+                <!-- Total Earning -->
+                <div class="vendor_card">
+                    <div class="vendor_card_top flex align_center justify_between ">
+
+                        <div class="flex flex_col">
+                            <h3>Total Earning</h3>
+                        </div>
+                        <!-- <span class="iconify" data-icon="material-symbols:cloud-download-outline-rounded"></span> -->
+                    </div>
+                    <div class="vendor_card_main flex justify_center align_center">
+                        <h1>৳{{applicationInfo.totalEarning | number : '1.2-2'}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <h2>Charts</h2>
+    <div class="flex" style="justify-content: space-around;">
+        <div class="">
+            <canvas id="chart" width="500" height="400"></canvas>
+        </div>
+        <div class="">
+            <canvas id="pie" width="500" height="400"></canvas>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<header id="nav_header">
+
+    <div class="container flex justify_between align_center responsive_container">
+
+        <a routerLink="/" routerLinkActive="active" class="logo">
+            <img src="../../../assets/Logo.png" alt="">
+        </a>
+
+        <div class="nav_contents flex justify_between align_center">
+            <nav class="navbar">
+                <h1>Ride Administrator</h1>
+                <a class="nav_links btn mb-1 logout">Logout</a>
+            </nav>
+
+            <div class="nav_contents_right flex align_center justify_between">
+
+                <div class="profile_section" id="test">
+                    <div class="profile" routerLinkActive="active" #toggleButton>
+                        <a>
+                            <img src="https://static.vecteezy.com/system/resources/previews/010/890/876/original/illustration-car-logo-template-for-car-wash-auto-detailing-auto-glass-and-tint-service-modification-garage-free-vector.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                    <div class="profile_menu" #menu id="profile_menu">
+                        <h2></h2>
+                        <ul>
+                            <li>
+                                <i class="fa-solid fa-user"></i>
+                                <a routerLink="/user/user_profile">My Profile</a>
+                            </li>
+
+
+
+                            <li>
+                                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                <a>Log out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+        <!-- hamburger -->
+        <!-- <i class="fas fa-bars hamburger" [class.fa-times]="hamburger" (click)="hamburger_menu()"></i> -->
+    </div>
+
+
+</header>

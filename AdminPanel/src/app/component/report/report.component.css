@@ -1,0 +1,293 @@
+#vendor_main_content .admin_top {
+    padding-top: 1em;
+}
+
+.vendor_card {
+    width: 260px;
+    height: 180px;
+    padding: 1.5em 0.7em;
+    background: linear-gradient(117.12deg, #8f016c 0.9%, #8870f7 100%);
+    box-shadow: 0px 6.09756px 8.53659px rgba(255, 213, 64, 0.15);
+    border-radius: 5px;
+    filter: drop-shadow(0px 6.125px 8.575px rgba(80, 175, 255, 0.15));
+}
+
+.vendor_card_calendar {
+    font-size: 0.8em;
+    padding-top: 0.5em;
+}
+
+.vendor_card_calendar::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 0.5em;
+}
+
+.vendor_card_top .fas.fa-sliders-h {
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.vendor_card_top input {
+    display: none;
+}
+
+.vendor_card:nth-child(2) {
+    background: linear-gradient(117.22deg, #334e83 0%, #50afff 100.33%, rgba(196, 196, 196, 0) 100.34%);
+}
+
+.vendor_card:nth-child(3) {
+    background: linear-gradient(117.22deg, #0517a1 0%, #7a60e2 100.33%);
+}
+
+
+.vendor_card:nth-child(6) {
+    background: linear-gradient(117.22deg, #0a038786 0%, #8d1122 100.33%);
+}
+
+.vendor_card:nth-child(7) {
+    background: linear-gradient(117.22deg, #58ff85 0%, #28a374 100.33%);
+}
+
+.vendor_card .vendor_card_top {
+    font-size: 1.4em;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.vendor_card .vendor_card_main {
+    margin-top: 1em;
+    font-size: 1.3em;
+    color: white;
+}
+
+.admin_info {
+    gap: 1em;
+}
+
+.vendor_graph {
+    background-color: #1095b9;
+    width: 35%;
+    height: 200px;
+}
+
+.vendor_table {
+    margin-top: 2em;
+    background-color: #ebebeb;
+    padding: 1em;
+    border-radius: 5px;
+    max-height: 500px;
+    overflow-y: scroll !important;
+}
+
+.vendor_table table {
+    width: 100%;
+    font-size: 1.1em;
+    border-collapse: collapse;
+}
+
+.vendor_table table thead {
+    text-align: left;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.vendor_table table thead tr th {
+    padding: 1em;
+}
+
+.vendor_table table tbody tr {
+    border-bottom: 2px solid rgb(253, 253, 253);
+}
+
+.vendor_table table tbody tr td {
+    padding: 1em;
+}
+
+.table_img {
+    gap: 1em;
+    border-radius: 15px;
+    width: 150px;
+}
+
+.table_img img {
+    width: 100%;
+}
+
+
+
+.link_default {
+    color: #06122a !important;
+}
+
+.btn_quotation {
+    background-color: #00bbf0;
+}
+
+.btn_bidding {
+    background-color: #71bf44;
+}
+
+.btn_quotation,
+.btn_bidding {
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 1em 0;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+
+/* vendor quotation_modal */
+
+#show_quotation .modal-wrapper {
+    width: 890px;
+    background: #ffffff;
+    border: 1px solid rgba(6, 18, 42, 0.1);
+    box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.heading_med_info {
+    padding: 1em 0;
+}
+
+#show_quotation .modal-wrapper .modal_body .modal_img_section {
+    width: 40%;
+}
+
+#show_quotation .modal-wrapper .modal_body .modal_img_section {
+    width: 45%;
+    gap: 1em;
+    margin: 1em;
+    max-height: 300px;
+}
+
+#show_quotation .modal-wrapper .modal_body .med_info_section {
+    width: 55%;
+}
+
+.med_info_section {
+    padding: 1em;
+}
+
+.med_info_section .med_info_main {
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.med_info_section .heading_med_info p {
+    color: #00bbf0;
+}
+
+.med_info_section .heading_med_info button {
+    background-color: #00bbf0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    border: none;
+    cursor: pointer;
+}
+
+.med_row {
+    font-size: 1.1em;
+    margin: 1em 0;
+}
+
+.med_row span input {
+    border: none;
+    font-size: 1em;
+    outline: none;
+    width: 100%;
+}
+
+.med_priceing {
+    margin-top: 1em;
+}
+
+.quantity .l {
+    margin-left: 1em;
+}
+
+.quantity .l span {
+    margin: 0 1em;
+}
+
+.quantity .l button {
+    padding: 1em 1.2em;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid rgba(36, 36, 36, 0.178);
+}
+
+.quantity .l button:nth-child(1) {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.quantity .l button:nth-child(3) {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.quitation_med_info_price {
+    background: #ffffff;
+    border: 2px solid rgba(64, 64, 64, 0.1);
+    border-radius: 3.77395px;
+    padding: 0.5em 1.2em;
+}
+
+.med_row hr {
+    margin-top: 1em;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+}
+
+.med_info_btns {
+    justify-content: flex-end;
+    gap: 1.5em;
+    margin-top: 3em;
+}
+
+.med_info_btns button {
+    font-size: 1.1em;
+    transition: none !important;
+}
+
+.med_info_btns button:nth-child(1) {
+    background: #404040;
+    border-radius: 50px;
+    color: white;
+    border: none;
+}
+
+.med_info_btns button:nth-child(2) {
+    background: #00bbf0;
+    border-radius: 50px;
+    color: white;
+    border: none;
+}
+
+.iconify {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.chart {
+    width: 300px;
+    height: 300px;
+}

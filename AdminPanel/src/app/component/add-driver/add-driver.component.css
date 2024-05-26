@@ -1,0 +1,33 @@
+.vendor_info {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+    gap: 2em;
+}
+
+.btn {
+    padding: 1em 2em;
+}
+
+.btn.active {
+    background-color: #d7d7d7cc;
+    color: #000000;
+}
+
+.vendor_form_section {
+    margin-top: 2em;
+}
+
+.btn_personal_info {
+    justify-content: end;
+    margin-top: 1em;
+}
+
+
+.input_row .btn {
+    background-color: rgb(93, 243, 0);
+    color: rgb(7, 7, 7);
+    border: none;
+    font-weight: bold;
+}

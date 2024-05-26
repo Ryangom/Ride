@@ -1,0 +1,78 @@
+<div class="sidebar flex flex_col">
+    <ul>
+        <li>
+            <a routerLink="/home" routerLinkActive="active" class="sidebar_links"
+                [routerLinkActiveOptions]="{exact:true}">
+                <span class="iconify" data-icon="ri:function-line"></span>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'customers' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="mdi:user"></span>
+                Users
+            </a>
+        </li>
+        <li>
+            <a routerLink="/drivers" [routerLink]="[{ outlets:{ 'admin': 'drivers' } }]" routerLinkActive="active"
+                class="sidebar_links">
+                <span class="iconify" data-icon="healthicons:truck-driver"></span>
+                Drivers
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'bookings' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="material-symbols:edit-calendar"></span>
+                Intercity Rides
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'trips' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="simple-icons:tripdotcom"></span>
+                Ride list
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'compliance' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="fluent-mdl2:compliance-audit"></span>
+                Compliance
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'vehicles' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="fluent:vehicle-car-24-filled"></span>
+                Vehicles
+            </a>
+        </li>
+
+        <li id="{{pulse ? 'pulse': ''}}">
+            <a [routerLink]="[{ outlets:{ 'admin': 'emergency' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="medical-icon:emergency"></span>
+                Emergency
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'report' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="mdi:report-bar"></span>
+                Reports
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]="[{ outlets:{ 'admin': 'settings' } }]" routerLinkActive="active" class="sidebar_links">
+                <span class="iconify" data-icon="ic:twotone-settings"></span>
+                Settings
+            </a>
+        </li>
+
+        <li>
+            <a class="sidebar_links" (click)="logout()">
+                <span class="iconify" data-icon="material-symbols:logout"></span>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+</div>

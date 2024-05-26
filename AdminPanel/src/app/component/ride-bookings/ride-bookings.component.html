@@ -1,0 +1,47 @@
+<div class="flex justify_between align_center">
+    <h2>Intercity Rides List</h2>
+</div>
+
+
+
+<div class="vendor_table" id="vendor_table">
+    <table>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Pickup Location</th>
+                <th>Destination Lnocation</th>
+                <th>Distance</th>
+                <th>Customer</th>
+                <th>Driver</th>
+                <th>Scheduled time</th>
+                <th>Fair</th>
+                <th>Earning</th>
+                <th>Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of bookings">
+                <td>{{data._id}}</td>
+                <td>{{data.pickupLocationEn}}</td>
+                <td>{{data.destinationEn}}</td>
+                <td>{{data.distance+'km'}}</td>
+                <td>{{data.customer.name}}</td>
+                <td>{{data.driver.name}}</td>
+                <td>{{data.scheduleTime}}</td>
+                <td>{{data.totalPrice}}</td>
+                <td>{{100}}</td>
+                <td>{{data.status}}</td>
+            </tr>
+
+
+
+        </tbody>
+
+
+    </table>
+</div>
+
+<!-- <pagination-controls (pageChange)="page = $event" previousLabel="Prev"></pagination-controls> -->

@@ -1,0 +1,47 @@
+<div class="flex justify_between align_center">
+    <h2>Emergency Requests</h2>
+</div>
+
+
+
+<div class="vendor_table" id="vendor_table">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone number</th>
+                <th>Type </th>
+                <th>Help Type</th>
+                <th>Current Location</th>
+                <th>Request Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of emergencyData | paginate:{itemsPerPage:8, currentPage:0}">
+                <td>{{data.name}}</td>
+                <td>{{data.phone}}</td>
+                <td>{{data.type}}</td>
+                <td>{{data.helpType}}</td>
+                <td>
+                    <a target="_blank" href="{{data.location}}">Open Map</a>
+                </td>
+                <td>{{data.createdAt| date:'short'}}</td>
+                <td>{{data.status}}</td>
+                <td class="flex justify_center gap_1">
+                    <button *ngIf="data.status=='onGoing'" class="btn" type="button"
+                        style="background-color: rgb(508, 210, 0); color: black;"
+                        (click)="action(data,'ActionTaken')">ActionTaken</button>
+                    <button class="btn" type="button" style="background-color: green;"
+                        (click)="action(data,'Complete')">Complete</button>
+                </td>
+
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+<!-- <pagination-controls (pageChange)="page = $event" previousLabel="Prev"></pagination-controls> -->

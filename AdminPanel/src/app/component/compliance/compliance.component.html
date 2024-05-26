@@ -1,0 +1,31 @@
+<div class="flex justify_between align_center">
+    <h2>Compliance list</h2>
+</div>
+
+
+
+<div class="vendor_table" id="vendor_table">
+    <table>
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Phone number</th>
+                <th>Subject</th>
+                <th style="width: 500px;">Complaint</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of complaint | paginate:{itemsPerPage:8, currentPage:page}">
+                <td>{{data.name}}</td>
+                <td>{{data.user.mobileNumber}}</td>
+                <td>{{data.subject}}</td>
+                <td>{{data.complain}}</td>
+
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Prev"></pagination-controls>

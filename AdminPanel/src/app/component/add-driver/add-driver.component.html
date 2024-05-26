@@ -1,0 +1,124 @@
+<div class="flex justify_between align_center">
+    <h2>Add Driver</h2>
+</div>
+
+
+<div class="vendor_form_section">
+
+
+    <div>
+        <h1>Personal Information</h1>
+    </div>
+    <br>
+    <form class="profile_form" method="" action="">
+        <div class="input_row">
+            <div class="input_box flex flex_col">
+                <label for="">Name</label>
+                <input type="text" name="name" id="" placeholder="Eg. your text here" [(ngModel)]="addUserModel.name">
+            </div>
+        </div>
+
+
+        <div class="input_row flex justify_between">
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">Phone Number</label>
+                <input type="tel" id="" name="mobile" placeholder="Eg. your text here"
+                    [(ngModel)]="addUserModel.mobileNumber">
+            </div>
+
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">Email Address</label>
+                <input type="email" id="" name="email" placeholder="Eg. your text here"
+                    [(ngModel)]="addUserModel.email">
+            </div>
+
+        </div>
+        <div class="input_row flex justify_between">
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">Password</label>
+                <input type="password" id="" placeholder="Eg. your text here" [(ngModel)]="addUserModel.password"
+                    name="pass">
+            </div>
+
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">Confirm Password:</label>
+                <input type="password" id="" #cpassword placeholder="Eg. your text here" [(ngModel)]="cpasswords"
+                    name="cpass">
+            </div>
+
+        </div>
+
+        <div class="input_row " id="file_up">
+            <div class="input_box flex flex_col ">
+                <label for="">Driving Licence:</label>
+                <input type="file" id="" name="drivingLicense" placeholder="Eg. your text here"
+                    (change)="onFileUp($event)">
+            </div>
+        </div>
+
+        <div class="input_row " id="file_up">
+            <div class="input_box flex flex_col ">
+                <label for="">NID:</label>
+                <input type="file" id="" name="nid" placeholder="Eg. your text here" (change)="onFileUp($event)">
+            </div>
+        </div>
+    </form>
+
+    <div>
+        <h1>Vehicle Information</h1>
+    </div>
+    <br>
+    <form class="profile_form" method="" action="">
+        <div class="input_row">
+            <div class="input_box flex flex_col">
+                <label for="">Car Name</label>
+                <input type="text" name="name" id="" placeholder="Eg. your text here" [(ngModel)]="vehicleModel.name">
+            </div>
+        </div>
+        <div class="input_row">
+            <div class="input_box flex flex_col">
+                <label for="">Image</label>
+                <input type="file" name="vehicalImage" id="" placeholder="Eg. your text here"
+                    (change)="onFileUp($event)">
+            </div>
+        </div>
+
+
+        <div class="input_row">
+            <div class="input_box flex flex_col">
+                <label for="">Vehicle Registration</label>
+                <input type="file" name="vehicleRegistration" id="" placeholder="Eg. your text here"
+                    (change)="onFileUp($event)">
+            </div>
+        </div>
+
+
+        <div class="input_row flex justify_between">
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">Plate Number</label>
+                <input type="text" id="" name="mobile" placeholder="Eg. your text here"
+                    [(ngModel)]="vehicleModel.plateNumber">
+            </div>
+
+
+            <div class="input_box flex flex_col input_sm">
+                <label for="">color</label>
+                <input type="text" id="" name="mobile" placeholder="Eg. your text here"
+                    [(ngModel)]="vehicleModel.color">
+            </div>
+
+        </div>
+
+        <div class="input_row flex justify_flex_end btn_personal_info">
+            <!-- <button (click)="backto_userlist();" class="btn" type="submit">Cancel</button> -->
+            <button class="btn mt-1" type="submit" (click)="addDriver()">Submit</button>
+        </div>
+
+
+    </form>
+</div>

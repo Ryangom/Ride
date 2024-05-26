@@ -1,0 +1,63 @@
+<div class="flex justify_between align_center">
+    <h2>Vehicle list</h2>
+</div>
+
+
+
+<div class="vendor_table" id="vendor_table">
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle Name</th>
+                <th>Plate</th>
+                <th>Vehicle Photo</th>
+                <th>Owner Name</th>
+                <th>Owner Number</th>
+                <th>Driving License</th>
+                <th>Registration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of vehiclesData | paginate:{itemsPerPage:8, currentPage:page}">
+                <td>{{data.name}}</td>
+                <td>{{data.plateNumber}}</td>
+
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+                        <a href="{{data.image}}" target="_blank">
+                            <img *ngIf="data.image !=='' " src="{{data.image}}" alt="">
+                            <p *ngIf="data.image =='' ">(No image)</p>
+                        </a>
+                    </div>
+                </td>
+                <td>{{data.vehicleOwner.name}}</td>
+                <td>{{data.vehicleOwner.mobileNumber}}</td>
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+
+                        <a href="{{data.vehicleOwner.drivingLivence}}" target="_blank">
+                            <img *ngIf="data.vehicleOwner.drivingLivence !=='' "
+                                src="{{data.vehicleOwner.drivingLivence}}" alt="">
+                            <p *ngIf="data.vehicleOwner.drivingLivence =='' ">(No image)</p>
+                        </a>
+
+                    </div>
+                </td>
+                <td class="table_img_section">
+                    <div class="flex table_img gap_1">
+                        <a href="{{data.vehicleOwner.vehicleRegistration}}" target="_blank">
+                            <img *ngIf="data.vehicleOwner.vehicleRegistration !=='' "
+                                src="{{data.vehicleOwner.vehicleRegistration}}" alt="">
+                            <p *ngIf="data.vehicleOwner.vehicleRegistration =='' ">(No image)</p>
+                        </a>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+
+
+    </table>
+</div>
+
+<pagination-controls (pageChange)="page = $event" previousLabel="Prev"></pagination-controls>
